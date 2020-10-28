@@ -33,17 +33,14 @@ def chunks(lst, n):
 def scale_data(
     df: pd.DataFrame, config: Dict[str, Any], scaler: StandardScaler = None,
 ) -> Tuple[pd.DataFrame, Any]:
-    """Scale specified columns of the dataframe.
+    """Scale given features of the df.
 
-    If scaler object is not provided, we will initiate scaler and fit_transforrm the data. If scaler
-    object is provided we will only transform the data with the given scaler.
+    If a scaler is not provided, a new scaler is initiated and used to fit/tranform the data. If a scaler
+    object is given the data is  transformed on the scaler.
 
     Args:
         df: Data on which scaling is performed.
         scaler: Scaler object.
-
-    Returns:
-        Scaled dataframe.
     """
     features = get_features(config)
     if scaler:

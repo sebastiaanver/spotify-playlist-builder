@@ -117,13 +117,14 @@ def find_closest_points_per_cluster(
 
         tree = spatial.KDTree(spotify_df_cluster[features].values)
         idx = tree.query(user_df_cluster[features].values, k=5)[-1]
-        
-        idx = [i for ids in idx for i in ids ]
-        
+
+        idx = [i for ids in idx for i in ids]
+
         closes_songs = spotify_df_cluster.iloc[idx, :]
         close_points = close_points.append(closes_songs)
-    
-    
+
     close_points.drop_duplicates(inplace=True)
-    close_points = close_points[ close_points.apply(lambda x: x.uri not in user_df.uri, axis=1)]
+    close_points = close_points[
+        close_points.apply(lambda x: x.uri not in user_df.uri, axis=1)
+    ]
     return close_points

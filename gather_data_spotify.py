@@ -2,7 +2,6 @@ import pandas as pd
 import utils as utils
 
 
-
 def get_audio_features_from_playlist_songs(playlists: str) -> pd.DataFrame:
     track_ids = []
     songs_info = []
