@@ -1,0 +1,36 @@
+client_id: "XXX"
+client_secret: "XXX"
+redirect_uri: "http://localhost:8887/check"
+scope: "user-library-read user-top-read playlist-modify-public playlist-modify-private"
+
+gather_data: False
+tune_parameters: False
+
+user_data_file_path: "data/user_data.csv"
+user_top_artist_data_file_path: "data/user_top_artist_data.csv"
+
+scaler: "standard_scaler"
+
+features:
+  acousticness:
+    scaling: True
+  danceability:
+    scaling: True
+  energy:
+    scaling: True
+  instrumentalness:
+    scaling: True
+  liveness:
+    scaling: True
+  loudness:
+    scaling: True
+  mode:
+    scaling: True
+  speechiness:
+    scaling: True
+  tempo:
+    scaling: True
+  key:
+    scaling: True
+  valence:
+    scaling: True
